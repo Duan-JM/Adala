@@ -14,7 +14,7 @@ class FileMemory(Memory):
         with open(self.filepath) as f:
             memory = json.load(f)
         memory[observation] = experience
-        with open(self.filepath, 'w') as f:
+        with open(self.filepath, "w") as f:
             json.dump(memory, f, indent=2)
 
     def retrieve(self, observation: str) -> Any:

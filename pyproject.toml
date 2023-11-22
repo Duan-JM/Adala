@@ -4,6 +4,7 @@ version = "0.0.4dev"
 description = "Adala: Autonomous Data Labeling Agent"
 authors = [
     {name = "HumanSignal", email = "hello@humansignal.com"},
+    {name = "Duan-JM", email = "vincent.duan95@gamil.com"},
 ]
 dependencies = [
     "pandas",
@@ -49,4 +50,10 @@ doc = [
     "mkdocs-jupyter>=0.24.3",
     "mkdocs-material>=9.4.7",
     "mkdocstrings-python>=1.7.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = "./"
+addopts = [
+    "--import-mode=importlib",
 ]

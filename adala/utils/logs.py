@@ -18,7 +18,7 @@ def print_text(text: str, style=None, streaming_style=False):
     """
     if streaming_style:
         for char in text:
-            console.print(char, sep='', end='', style=style)
+            console.print(char, sep="", end="", style=style)
             time.sleep(0.01)
         console.print()
     else:

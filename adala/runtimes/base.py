@@ -14,17 +14,18 @@ class Runtime(BaseModel, ABC):
     Attributes:
         verbose (bool): Flag indicating if runtime outputs should be verbose. Defaults to False.
     """
+
     verbose: bool = False
 
-    @model_validator(mode='after')
-    def init_runtime(self) -> 'Runtime':
+    @model_validator(mode="after")
+    def init_runtime(self) -> "Runtime":
         """Initializes the runtime.
 
         This method should be used to validate and potentially initialize the runtime instance.
 
         Returns:
             Runtime: The initialized runtime instance.
-        """  
+        """
         return self
 
     @abstractmethod
@@ -80,12 +81,12 @@ class Runtime(BaseModel, ABC):
         output = batch.progress_apply(
             self.record_to_record,
             axis=1,
-            result_type='expand',
+            result_type="expand",
             input_template=input_template,
             instructions_template=instructions_template,
             output_template=output_template,
             extra_fields=extra_fields,
-            field_schema=field_schema
+            field_schema=field_schema,
         )
         return output
 
@@ -123,5 +124,5 @@ class Runtime(BaseModel, ABC):
             instructions_template=instructions_template,
             output_template=output_template,
             extra_fields=extra_fields,
-            field_schema=field_schema
+            field_schema=field_schema,
         )
