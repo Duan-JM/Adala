@@ -1,2 +1,0 @@
-
-::: adala.environments.base
